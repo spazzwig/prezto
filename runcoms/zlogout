@@ -7,8 +7,6 @@
 
 # Print the message.
 cat <<-EOF
-
-Thank you. Come again!
-  -- Dr. Apu Nahasapeemapetilon
+So long, and thanks for all the fish.
 EOF
 
