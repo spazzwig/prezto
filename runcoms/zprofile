@@ -44,6 +44,7 @@ typeset -gU cdpath fpath mailpath path
 # Set the list of directories that Zsh searches for programs.
 path=(
   ${ZDOTDIR:-$HOME}/bin
+  /usr/local/share/npm/bin
   /usr/local/{bin,sbin}
   $path
 )
@@ -76,3 +77,34 @@ if [[ ! -d "$TMPPREFIX" ]]; then
   mkdir -p "$TMPPREFIX"
 fi
 
+
+### Overall conditionals/functions {{{
+  # add directories to $PATH
+#  _add_to_path() {
+#    local path
+#
+#    for path in "$@"; do
+#      [[ -d "$path" ]] && [[ ! ":${PATH}:" =~ :${path}: ]] && export PATH=${path}:$PATH
+#    done
+#  }
+
+  # recursively 'fix' dir/file perm
+  fixperms() {
+    local dir
+
+    for dir in "$@"; do
+      find "$dir" -type d -exec chmod 755 -- {} +
+      find "$dir" -type f -exec chmod 644 -- {} +
+    done
+  }
+
+# }}}
+
+### Exports {{{
+  # set path
+  #_add_to_path "$HOME/bin" "/usr/local/bin" "/usr/local/sbin"
+  #export PATH=${HOME}/bin:/usr/local/share/npm/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:${PATH}
+  export HOMEBREW_GITHUB_API_TOKEN=d7d097fdc2873cd6bb040de99c702cb8c2f23ea8
+# }}}
+
+# vim: foldmethod=marker foldmarker={{{,}}}
