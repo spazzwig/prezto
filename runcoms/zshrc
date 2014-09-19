@@ -12,6 +12,7 @@ fi
 
 # Customize to your needs...
 
+alias bower='noglob bower'
 alias cl='clear'
 alias md='mkdir'
 alias sp="source /etc/profile; source ${ZDOTDIR:-$HOME}/.zshenv; source ${ZDOTDIR:-$HOME}/.zprofile; source ${ZDOTDIR:-$HOME}/.zshrc; source ${ZDOTDIR:-$HOME}/.zlogin"
@@ -19,3 +20,4 @@ alias suu='sudo -s'
 alias v='vim'
 alias vv='sudo vim'
 
+source /Users/gabe/.iterm2_shell_integration.zsh
