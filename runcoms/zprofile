@@ -105,6 +105,7 @@ fi
   #_add_to_path "$HOME/bin" "/usr/local/bin" "/usr/local/sbin"
   #export PATH=${HOME}/bin:/usr/local/share/npm/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:${PATH}
   export HOMEBREW_GITHUB_API_TOKEN=d7d097fdc2873cd6bb040de99c702cb8c2f23ea8
+  export DOCKER_HOST=tcp://192.168.59.103:2375
 # }}}
 
 # vim: foldmethod=marker foldmarker={{{,}}}
